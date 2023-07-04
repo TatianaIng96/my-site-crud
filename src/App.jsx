@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import EditProdut from './EditProduct'
 import './App.css'
 
 
@@ -12,9 +13,14 @@ function App() {
   ]
 
   const [showMenu, setShowMenu] = useState(false);
+  const [showAdd,setShowAdd]=useState(false)
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const buttonAdd = () => {
+    setShowAdd(!showAdd);
   };
   return (
     <>
@@ -26,11 +32,11 @@ function App() {
       </nav>
         <div className={`position-column  container navbar-menu ${showMenu ? "show" : ""}`}
           id="navbarMenu">
-            <div className='column column1'>
+            <div className={`column column1 ${showAdd ? "show" : ""}`}>
               <div className='class-table'>
                 <div className='container-button'>
                   <h1 className='product'>Product list</h1>
-                  <button className='button-add'>ADD</button>
+                  <button className='button-add' onClick={buttonAdd}>ADD</button>
                 </div>
                 <table>
                     <thead><tr>
@@ -58,7 +64,7 @@ function App() {
               </div>
             </div>
             <div className='column column2'>
-                <h1>Agregar un nuevo producto</h1>
+                {showAdd &&  <EditProdut/>}
             </div>
         </div>
     </>

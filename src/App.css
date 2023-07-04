@@ -50,15 +50,25 @@ nav{
 .column1 {
   order: 1; /* Cambiar el orden de la columna 1 */
   flex:1;
-  padding: 10px;
+  background-color:white;
+  flex-basis: 600%;
+  margin-left: 2%;
+}
+
+.column1.show {
+  order: 1; /* Cambiar el orden de la columna 1 */
+  flex:1;
   background-color:white;
   flex-basis: 70%;
+  margin-left: -5%;
 
 }
 
 .column2 {
   order: 2; /* Cambiar el orden de la columna 2 */
   flex-basis: 30%;
+  margin-top: 13%;
+  margin-left: -10%;
 }
 
 .navbar-toggler {
