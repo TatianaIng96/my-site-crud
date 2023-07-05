@@ -1,0 +1,27 @@
+.conta{
+    display: flex;
+    flex-direction: column;
+}
+
+.h1-edit{
+    margin-top: 25%;
+    padding: 1rem;
+}
+
+@media (max-width: 900px) {
+    
+    .h1-edit{
+        margin-top: -15%;
+        padding: 1rem;
+        margin-left: 15%;
+    }
+}
+
+@media (min-width: 1440px) {
+    
+    .h1-edit{
+        margin-top: 15%;
+        padding: 1rem;
+        margin-left: -3%;
+    }
+}

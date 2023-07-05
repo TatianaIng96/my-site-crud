@@ -1,0 +1,66 @@
+
+
+form {
+  /* Centrar el formulario en la página */
+  
+  width: 355px;
+  height: 440px;
+  /* Esquema del formulario */
+  padding: 1rem;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+  background-color: #f8f9fb;
+  margin-top: -5%;
+}
+
+label {
+  /* Tamaño y alineación uniforme */
+  display: inline-block;
+  width: 150px;
+  font-size: 15px;
+  text-align: start;
+  margin-left: 2%;
+  padding: 1rem;
+}
+
+input{
+  font: 1em sans-serif;
+  width: 330px;
+  box-sizing: border-box;
+  /* Hacer coincidir los bordes del campo del formulario */
+  border: 1px solid #c8ced3;
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+}
+
+input:focus{
+  border-color: #999;
+}
+
+@media (max-width: 900px) {
+  form{
+    width: 400px;
+    margin-top: 3%;
+    margin-left: 10%;
+  }
+
+}
+
+.button-cancel{
+  display: flex;
+  margin-left: 55%;
+  margin-top: -11%;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-update{
+  background-color: green;
+}
+
+
+
+
+
+  
