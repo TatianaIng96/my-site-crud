@@ -1,68 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import "./App.css";
+import { Table } from "./components/Table";
+import { Modal } from "./components/Modal";
+import { useState } from "react";
+import { Header } from "./components/Header";
 
 function App() {
-  const data = [
-    { name: "Anom", age: 19, gender: "Male" },
-    { name: "Megha", age: 19, gender: "Female" },
-    { name: "Subham", age: 25, gender: "Male" },
-  ]
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const [showMenu, setShowMenu] = useState(false);
+  const [rows, setRows] = useState([
+    { item: "Item 1", color: "Color 1", category: "Category 1", price: 100 },
+    { item: "Item 2", color: "Color 2", category: "Category 2", price: 200 },
+    { item: "Item 3", color: "Color 3", category: "Category 3", price: 300 },
+  ]);
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
+  const [rowToEdit, setRowToEdit] = useState(null);
+
+  const handleDeleteRow = (targetIndex) => {
+    setRows(rows.filter((_, index) => index !== targetIndex));
   };
-  return (
-    <>
-      <nav className="navbar">
-        <div className="navbar-brand"><img src={viteLogo}/> <h1>My Site</h1></div>
-        <button className="navbar-toggler" onClick={toggleMenu}>
-          Menu
-        </button>
-      </nav>
-        <div className={`position-column  container navbar-menu ${showMenu ? "show" : ""}`}
-          id="navbarMenu">
-            <div className='column column1'>
-              <div className='class-table'>
-                <div className='container-button'>
-                  <h1 className='product'>Product list</h1>
-                  <button className='button-add'>ADD</button>
-                </div>
-                <table>
-                    <thead><tr>
-                      <th>Name</th>
-                      <th>Age</th>
-                      <th>Gender</th>
-                      <th>Accion</th>
-                    </tr></thead>
-                    <tbody>
-                      {data.map((val, key) => {
-                          return (
-                              <tr key={key}>
-                                  <td>{val.name}</td>
-                                  <td>{val.age}</td>
-                                  <td>{val.gender}</td>
-                                  <td className='button-eliminar-editar'>
-                                    <button className='color'>Edit</button>{' | '}<button className='color'>Delete</button>
-                                  </td>
-                              </tr>
-                          )
-                      })}
 
-                    </tbody>
-                </table>
-              </div>
-            </div>
-            <div className='column column2'>
-                <h1>Agregar un nuevo producto</h1>
-            </div>
-        </div>
-    </>
-  )
+  const handleEditRow = (index) => {
+    setRowToEdit(index);
+
+    setModalOpen(true);
+  };
+
+  const handleSubmit = (newRow) => {
+    rowToEdit === null
+      ? setRows([...rows, newRow])
+      : setRows(
+          rows.map((currRow, index) => {
+            if (index !== rowToEdit) return currRow;
+
+            return newRow;
+          })
+        );
+  };
+
+  return (
+    <div className="App">
+      <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+      <button className="btn" onClick={() => setModalOpen(true)}>
+        Add
+      </button>
+      {modalOpen && (
+        <Modal
+          closeModal={() => {
+            setModalOpen(false);
+            setRowToEdit(null);
+          }}
+          onSubmit={handleSubmit}
+          defaultValue={rowToEdit !== null && rows[rowToEdit]}
+        />
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
