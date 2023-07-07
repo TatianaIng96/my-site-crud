@@ -12,7 +12,7 @@ export const Table = ({ rows, deleteRow, editRow }) => {
             <th>Color</th>
             <th>Category</th>
             <th>Price</th>
-            <th>Action</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +39,25 @@ export const Table = ({ rows, deleteRow, editRow }) => {
           })}
         </tbody>
       </table>
+    </div>
+  );
+};
+
+const TableTwo = ({ deleteRow, rows }) => {
+  // props = {
+  //   rows: "...",
+  //   deleteRow: "...",
+  //   isLogged: 1
+  // }
+
+  // const deleteRow = props.deleteRow
+  // const rows = props.rows
+
+  // const { deleteRow, rows } = props;
+
+  return (
+    <div className="">
+      <p>{deleteRow}</p>
     </div>
   );
 };

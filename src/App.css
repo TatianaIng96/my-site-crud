@@ -1,193 +1,79 @@
-
-#root {
-  /* Here we set the margin and padding  0 */
-  margin: none; 
-  padding: none;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
-.btn {
-  margin-left: 71%;
-}
-
-nav{
-  height: 60px;
-  background-color:#17181C;
-  color: white;
-  align-items: center;
-}
-
-img{
-  display: flex;
-  margin-top: 0.5%;
-  justify-content: flex-start;
-}
-.h1{
-  margin-top: -1%;
-  display: flex;
-  margin-left: 2%;
-}
-
-.navbar-brand{
-  justify-content: flex-start;
-}
 .navbar {
-  position: fixed;
+  background: #1a2133;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
   top: 0;
-  left: 0;
+  z-index: 999;
+}
+
+img {
+  height: 4rem;
+  width: 3rem;
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  z-index: 1;
   width: 100%;
-  z-index: 9999;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.position-column {
-  position: fixed;
-  top: 4rem;
-  left: 0;
+#navbar__logo {
+  display: flex;
+  font-size: 2rem;
+  color: white;
+  padding: 1rem;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 1rem;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
   width: 100%;
-  z-index: 9999;
-}
-.container {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Divide el contenedor en dos columnas de igual ancho */
-  grid-gap: 20px;
-  height: 100vh;
-  overflow-y: auto;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #f77062;
+  color: #fff;
 }
 
-.navbar-menu {
-  display: flex;
+.button:hover {
+  background: #4837ff;
+  transition: all 0.3s ease;
 }
 
-
-
-.column1 {
-  order: 1; /* Cambiar el orden de la columna 1 */
-  flex:1;
-  background-color:white;
-  flex-basis: 600%;
-  margin-left: -20%;
+.navbar__btn {
+  margin-left: auto;
 }
 
-.column1.show {
-  order: 1; /* Cambiar el orden de la columna 1 */
-  background-color:white;
-  flex-basis: 70%;
-  margin-left: -25%;
-
-}
-
-.column2 {
-  position: relative;
-  display: grid;
-  order: 2; /* Cambiar el orden de la columna 2 */
-  flex-basis: 30%;
-  margin-left: -25%;
-  align-items: center;
-  padding: 2rem;
-}
-
-.navbar-toggler {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: -3%;
-  margin-left: 90%;
-}
-
-
-.product{
-  margin-left: -2.5%;
-  margin-top: -5%;
-}
-
-.title-h1{
-  display: flex;
-  margin-left: 25%;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: -3.33em;
-  /* margin-inline-start: 0px; */
-  /* margin-inline-end: 0px; */
-  /* font-weight: bold; */
-  margin-top: 9%;
-}
-
-
-@media (max-width: 1000px) {
-  
-  .container {
-   /* Mostrar una columna en vista responsive */
-   display: flex;
+@media screen and (max-width: 960px) {
+  .navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
   }
-
-  .button-add {
-    margin-left: 80%;
-    margin-top: -5%;
-    width: 80px;
-    height: 35px;
-  }
-  .navbar-menu {
-    flex-direction: column; /* Alinear los elementos verticalmente */
-    padding: 10px;
-  }
-  .navbar-brand{
-    display: flex;
-    margin-top: -3%;
-    justify-content: flex-start;
-  }
-  .h1{
-    margin-top: 3%;
-    margin-left: -1%;
-  }
-  .navbar-menu.show {
-    display: flex; /* Mostrar el menú cuando se muestra el menú */
-  }
-
-  .column1 {
-    display: block; /* mostrar la columna 2 en vista responsive */
-    grid-column: 1;
-  }
-  
-  .column2 {
-    display: block; /* Mostrar la columna 1 en vista responsive */
-    grid-column: 2;
-  }
-  
-  .navbar-toggler {
-    display: block; /* Mostrar el botón del menú en vista responsive */
-    margin-top: -11%;
-    margin-left: 87%;
-  }
-
-  .navbar-menu.show .column2 {
-    display: block; /* Mostrar la columna 2 cuando se muestra el menú */
-  }
-  
-  .navbar-menu.show .column1 {
-    display: none; /* Ocultar la columna 1 cuando se muestra el menú */
-  }
-}
-
-@media (min-width: 1001px) {
-  .column1,
-  .column2 {
-    display: block; /* Mostrar ambas columnas en pantallas más grandes */
-  }
-
-  .container {
-    flex-direction: row;
-  }
-
-  .navbar-toggler {
-    display: none; /* Mostrar el botón del menú en vista responsive */
-  }
- 
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #faf9f6;
 }
