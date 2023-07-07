@@ -6,12 +6,8 @@ const FormCard = ({
   handleChange,
   handleSubmit,
   showAdd,
-  setShowEdit
+  handleClick
 }) => {
-
-  const handleClick = () => {
-    setShowEdit(false)
-  }
 
   return(
     <>
@@ -70,7 +66,7 @@ const FormCard = ({
             </div>
             {showAdd ? <ButtonAdd text="Add" type="submit"/> 
                      : (<div> <ButtonAdd  text={"Update"} type={"submit"} color={"green"}/>  
-                          <button onClick = {handleClick} className='button-cancel'> 
+                          <button onClick = {() => handleClick} className='button-cancel'> 
                             cancel
                           </button>
                         </div>)} 
