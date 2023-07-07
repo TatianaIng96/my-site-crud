@@ -117,7 +117,7 @@ function App() {
   return (
     <>
       {/* Navbar Section */}
-      <nav class="navbar">
+      <nav className="navbar">
         <div className="navbar__logo">
           <img src={viteLogo}></img>
           <h1 className="navbar__logo--title">My Site</h1>

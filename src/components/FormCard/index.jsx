@@ -73,7 +73,7 @@ const FormCard = ({
             <div>
               {" "}
               <ButtonAdd text={"Update"} type={"submit"} color={"green"} />
-              <button onClick={handleClick} className="button-cancel">
+              <button onClick={() => handleClick} className="button-cancel">
                 cancel
               </button>
             </div>
