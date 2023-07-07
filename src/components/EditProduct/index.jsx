@@ -9,6 +9,11 @@ const EditProdut =({handleSubmit,setShowEdit, product,setProduct}) => {
       setProduct({ ...product, [name]: value })
   }
 
+  const handleClick = () => {
+    setShowEdit(false)
+  }
+
+
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit(product)
@@ -25,7 +30,7 @@ const EditProdut =({handleSubmit,setShowEdit, product,setProduct}) => {
   return ( 
     <>
        <h1 className="h1-edit">Edit Product</h1>
-      <FormCard product={product}  handleChange={handleChange} handleSubmit= {onSubmit} setShowEdit={setShowEdit}/>
+      <FormCard product={product}  handleChange={handleChange} handleSubmit= {onSubmit} handleClick={handleClick}/>
     </>
   )
 }
