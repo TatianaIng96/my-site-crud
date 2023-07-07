@@ -55,25 +55,31 @@ const FormCard = ({
             </label>
           </div>
 
-            <div>
-              <label htmlFor='price'>
-                PRICE
-                <input
-                  type="text"
-                  id="price"
-                  name="price"
-                  value={product.price}
-                  onChange={handleChange}
-                />
-              </label>
-            </div>
-            {showAdd ? <ButtonAdd text="Add" type="submit"/> 
-                     : (<div> <ButtonAdd  text={"Update"} type={"submit"} color={"green"}/>  
-                          <button onClick = {() => handleClick} className='button-cancel'> 
-                            cancel
-                          </button>
-                        </div>)} 
-          </form>
+          <div>
+            <label htmlFor="price">
+              PRICE
+              <input
+                type="text"
+                id="price"
+                name="price"
+                value={product.price}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          <div className="button-actions">
+            <ButtonAdd
+              text={showAdd ? "Add" : "Update"}
+              type="submit"
+              color="#43CE91"
+            />
+            {!showAdd && (
+              <button onClick={() => handleClick} className="button-cancel">
+                Cancel
+              </button>
+            )}
+          </div>
+        </form>
       </div>
     </>
   );
