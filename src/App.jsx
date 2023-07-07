@@ -38,7 +38,7 @@ function App() {
   }, [isEffectExecuted]);
 
   const handleDeleteRow = async (id) => {
-    const url = `${import.meta.env.VITE_API_BASE_URL}/products`;
+    const url = "http://localhost:8080/products";
     try {
       const configFetch = {
         method: "DELETE",
@@ -75,7 +75,7 @@ function App() {
             return newProduct;
           })
         );
-    const url = `${import.meta.env.VITE_API_BASE_URL}/products${
+    const url = `http://localhost:8080/products${
       product.id ? `/${product.id}` : ""
     }`;
     const configFetch = {
