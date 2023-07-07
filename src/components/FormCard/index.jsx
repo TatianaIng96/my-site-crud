@@ -25,6 +25,7 @@ const FormCard = ({
                 name="productName"
                 value={product.productName}
                 onChange={handleChange}
+                required
               />
             </label>
           </div>
@@ -38,6 +39,7 @@ const FormCard = ({
                 name="color"
                 value={product.color}
                 onChange={handleChange}
+                required
               />
             </label>
           </div>
@@ -45,13 +47,17 @@ const FormCard = ({
           <div>
             <label htmlFor="category">
               CATEGORY
-              <input
-                type="text"
-                id="category"
+              <select
                 name="category"
                 value={product.category}
                 onChange={handleChange}
-              />
+                className="select-css"
+              >
+                <option value="Music">Music</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Home">Home</option>
+                <option value="Baby">Baby</option>
+              </select>
             </label>
           </div>
 
@@ -59,11 +65,12 @@ const FormCard = ({
             <label htmlFor="price">
               PRICE
               <input
-                type="text"
+                type="number"
                 id="price"
                 name="price"
                 value={product.price}
                 onChange={handleChange}
+                required
               />
             </label>
           </div>
