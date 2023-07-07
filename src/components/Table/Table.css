@@ -16,7 +16,7 @@ overflow-x: auto;
 }
 
 .table-titles {
-text-align: center;
+text-align:left;
 }
 
 .table thead {
