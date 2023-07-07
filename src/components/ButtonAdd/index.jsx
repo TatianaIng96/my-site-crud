@@ -1,7 +1,7 @@
 import React from "react";
-import './ButtonAdd.css'
+import "./ButtonAdd.css";
 
-const ButtonAdd = ({ text, onClick, type, color}) => {
+const ButtonAdd = ({ text, onClick, type, color }) => {
   const buttonStyle = {
     backgroundColor: color || "#3a79eb",
     // Otros estilos de botón

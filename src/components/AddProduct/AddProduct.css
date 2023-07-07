@@ -18,30 +18,16 @@
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: fit-content;
+  border-radius: 25px;
 }
 
 .block {
   display: block;
 }
 
-.h1-add {
-  margin-top: 25%;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
-}
-
-@media (max-width: 900px) {
-  .h1-add {
-    margin-top: -15%;
-    padding: 1rem;
-    margin-left: 15%;
-  }
-}
-
-@media (min-width: 1440px) {
-  .h1-add {
-    margin-top: 15%;
-    padding: 1rem;
-    margin-left: -3%;
-  }
 }

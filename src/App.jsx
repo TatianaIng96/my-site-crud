@@ -9,7 +9,6 @@ import NoData from "./components/NoData";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [showMenu, setShowMenu] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
   const [productToEdit, setProductToEdit] = useState(null);
@@ -48,15 +47,15 @@ function App() {
         },
       };
       await fetch(`${url}${id ? `/${id}` : ""}`, configFetch);
+      const targetIndex = products.findIndex(function (objeto) {
+        return objeto.id === id;
+      });
+      setProducts(products.filter((_, index) => index !== targetIndex));
+      setShowEdit(false);
+      setShowAdd(false);
     } catch (error) {
       console.log(error);
     }
-    const targetIndex = products.findIndex(function (objeto) {
-      return objeto.id === id;
-    });
-    setProducts(products.filter((_, index) => index !== targetIndex));
-    setShowEdit(false);
-    setShowAdd(false);
   };
 
   const handleEditRow = (index) => {
@@ -101,10 +100,6 @@ function App() {
     setShowAdd(false);
   };
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
-  };
-
   const buttonAdd = () => {
     setShowAdd(!showAdd);
     setShowEdit(false);
@@ -112,6 +107,7 @@ function App() {
 
   const closeModal = () => {
     setShowAdd(false);
+    setShowEdit(false);
   };
 
   return (
@@ -160,6 +156,7 @@ function App() {
             product={product}
             setProduct={setProduct}
             setShowEdit={setShowEdit}
+            closeModal={closeModal}
           />
         )}
       </div>
@@ -168,48 +165,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <div
-className={`position-column  container navbar-menu ${
-  showMenu ? "show" : ""
-}`}
-id="navbarMenu"
->
-<div className={`column column1 ${showAdd ? "show" : ""}`}>
-  <h1 className="title-h1">Product list</h1>
-  <button onClick={buttonAdd} className="btn">
-    ADD
-  </button>
-
-  {products.length > 0 ? (
-    <Table
-      rows={products}
-      deleteRow={handleDeleteRow}
-      editRow={handleEditRow}
-    />
-  ) : (
-    <NoData />
-  )}
-</div>
-
-<div className="column column2">
-  {showAdd && (
-    <AddProduct
-      handleSubmit={handleSubmit}
-      showAdd={showAdd}
-      product={product}
-      setProduct={setProduct}
-    />
-  )}
-  {showEdit && (
-    <EditProdut
-      handleSubmit={handleSubmit}
-      product={product}
-      setProduct={setProduct}
-      setShowEdit={setShowEdit}
-    />
-  )}
-</div>
-</div> */
-}

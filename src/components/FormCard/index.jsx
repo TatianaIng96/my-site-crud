@@ -67,17 +67,18 @@ const FormCard = ({
               />
             </label>
           </div>
-          {showAdd ? (
-            <ButtonAdd text="Add" type="submit" />
-          ) : (
-            <div>
-              {" "}
-              <ButtonAdd text={"Update"} type={"submit"} color={"green"} />
+          <div className="button-actions">
+            <ButtonAdd
+              text={showAdd ? "Add" : "Update"}
+              type="submit"
+              color="#43CE91"
+            />
+            {!showAdd && (
               <button onClick={() => handleClick} className="button-cancel">
-                cancel
+                Cancel
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </form>
       </div>
     </>

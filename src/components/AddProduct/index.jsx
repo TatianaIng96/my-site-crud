@@ -17,20 +17,24 @@ const AddProduct = ({
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit(product);
-
     setProduct({
       productName: "",
       color: "",
       category: "",
       price: "",
     });
+    closeModal();
   };
 
   return (
     <div className={`modal ${showAdd && "block"}`}>
       <div className="modal-content">
-        <h1 className="h1-add">Add Product</h1>
-        <button onClick={closeModal}>X</button>
+        <div className="modal-header">
+          <h1 className="h1-add">Add Product</h1>
+          <button className="modal-exit-btn" onClick={closeModal}>
+            X
+          </button>
+        </div>
         <FormCard
           product={product}
           handleChange={handleChange}

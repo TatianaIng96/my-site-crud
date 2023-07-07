@@ -1,33 +1,50 @@
 import React, { useState, useEffect } from "react";
 import FormCard from "../FormCard";
-import './EditProduct.css'
+import "./EditProduct.css";
 
-const EditProdut =({handleSubmit,setShowEdit, product,setProduct}) => {
-
+const EditProdut = ({
+  handleSubmit,
+  setShowEdit,
+  product,
+  setProduct,
+  closeModal,
+}) => {
   const handleChange = (e) => {
-      const { name, value } = e.target
-      setProduct({ ...product, [name]: value })
-  }
+    const { name, value } = e.target;
+    setProduct({ ...product, [name]: value });
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    handleSubmit(product)
-
+    handleSubmit(product);
 
     setProduct({
-      productName: '',
-      color: '',
-      category: '',
-      price: '',
-    })
-  }
+      productName: "",
+      color: "",
+      category: "",
+      price: "",
+    });
+    closeModal();
+  };
 
-  return ( 
-    <>
-       <h1 className="h1-edit">Edit Product</h1>
-      <FormCard product={product}  handleChange={handleChange} handleSubmit= {onSubmit} setShowEdit={setShowEdit}/>
-    </>
-  )
-}
+  return (
+    <div className={`modal ${setShowEdit && "block"}`}>
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="h1-edit">Edit Product</h1>
+          <button className="modal-exit-btn" onClick={closeModal}>
+            X
+          </button>
+        </div>
+        <FormCard
+          product={product}
+          handleChange={handleChange}
+          handleSubmit={onSubmit}
+          setShowEdit={setShowEdit}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default EditProdut;

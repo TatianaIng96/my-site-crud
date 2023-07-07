@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 120px;
+  padding: 2rem 6.5rem;
 }
 
 .navbar__logo {
@@ -31,10 +31,11 @@ img {
 
 .navbar__btn--get-started {
   border-radius: 4px;
-  background: #f77062;
+  background: #3a79eb;
   color: #fff;
-  width: 100px;
+  width: 7rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .navbar__btn--get-started:hover {
@@ -43,7 +44,7 @@ img {
 }
 
 .main-container {
-  padding: 20px 120px;
+  padding: 2rem 5.5rem;
 }
 
 .main-container__section1 {
@@ -53,5 +54,23 @@ img {
 
 .section1__btn {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.section1__btn:hover {
+  background: #4837ff;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    width: 37rem;
+    padding: 1rem 1rem;
+  }
+
+  .main-container__section1 {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
