@@ -14,6 +14,11 @@ const EditProdut = ({
     setProduct({ ...product, [name]: value });
   };
 
+  const handleClick = () => {
+    setShowEdit(false)
+  }
+
+
   const onSubmit = (e) => {
     e.preventDefault();
     handleSubmit(product);
