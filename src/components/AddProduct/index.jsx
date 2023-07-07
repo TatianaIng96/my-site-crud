@@ -1,45 +1,45 @@
 import React, { useState, useEffect } from "react";
-import {productList} from "../../assets/data";
 import FormCard from "../FormCard";
-import './AddProduct.css'
+import "./AddProduct.css";
 
-const AddProduct = ({handleSubmit, showAdd}) => {
-  const [product, setProduct] = useState({
-      productName: '',
-      color: '',
-      category:'',
-      price:'',
-  })
-
-  
-
-
+const AddProduct = ({
+  handleSubmit,
+  showAdd,
+  product,
+  setProduct,
+  closeModal,
+}) => {
   const handleChange = (e) => {
-      const { name, value } = e.target
-      setProduct({ ...product, [name]: value })
-  }
+    const { name, value } = e.target;
+    setProduct({ ...product, [name]: value });
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    handleSubmit(product)
+    handleSubmit(product);
 
-   // setProducts([...products, newProduct]);
-    // reset form
     setProduct({
-      productName: '',
-      color: '',
-      category: '',
-      price: '',
-    })
-  }
+      productName: "",
+      color: "",
+      category: "",
+      price: "",
+    });
+  };
 
-  return ( 
-    <>
-       <h1 className="h1-add">Add Product</h1>
-      <FormCard product={product}  handleChange={handleChange} handleSubmit= {onSubmit} showAdd={showAdd}/>
-    
-    </>
-  )
-}
+  return (
+    <div className={`modal ${showAdd && "block"}`}>
+      <div className="modal-content">
+        <h1 className="h1-add">Add Product</h1>
+        <button onClick={closeModal}>X</button>
+        <FormCard
+          product={product}
+          handleChange={handleChange}
+          handleSubmit={onSubmit}
+          showAdd={showAdd}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default AddProduct;
