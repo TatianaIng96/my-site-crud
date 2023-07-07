@@ -6,7 +6,7 @@ const FormCard = ({
   handleChange,
   handleSubmit,
   showAdd,
-  setShowEdit,
+  setShowEdit
 }) => {
 
   const handleClick = () => {
@@ -73,7 +73,7 @@ const FormCard = ({
                           <button onClick = {handleClick} className='button-cancel'> 
                             cancel
                           </button>
-                        </div>)}
+                        </div>)} 
           </form>
       </div>
     </>

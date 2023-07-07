@@ -1,18 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {productList} from "../../assets/data";
 import FormCard from "../FormCard";
 import './AddProduct.css'
 
-const AddProduct = ({handleSubmit, showAdd}) => {
-  const [product, setProduct] = useState({
-      productName: '',
-      color: '',
-      category:'',
-      price:'',
-  })
-
-  
-
+const AddProduct = ({handleSubmit, showAdd, product,setProduct}) => {
 
   const handleChange = (e) => {
       const { name, value } = e.target
@@ -23,8 +13,6 @@ const AddProduct = ({handleSubmit, showAdd}) => {
     e.preventDefault();
     handleSubmit(product)
 
-   // setProducts([...products, newProduct]);
-    // reset form
     setProduct({
       productName: '',
       color: '',

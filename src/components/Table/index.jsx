@@ -2,7 +2,7 @@ import React from "react";
 import "./Table.css";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 
-export const Table = ({ rows, deleteRow, editRow }) => {
+export const Table = ({ rows, deleteRow, editRow}) => {
   return (
     <div className="table-wrapper">
       <table className="table">
@@ -12,7 +12,7 @@ export const Table = ({ rows, deleteRow, editRow }) => {
             <th>Color</th>
             <th>Category</th>
             <th>Price</th>
-            <th>Action</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@ export const Table = ({ rows, deleteRow, editRow }) => {
                   <span className="actions">
                     <BsFillTrashFill
                       className="delete-btn"
-                      onClick={() => deleteRow(index)}
+                      onClick={() => deleteRow(row.id)}
                     />
                     <BsFillPencilFill onClick={() => editRow(index)} />
                   </span>

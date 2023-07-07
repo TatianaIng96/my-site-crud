@@ -1,0 +1,32 @@
+.attribution { font-size: 11px; text-align: center; }
+.primary{
+    color: #333333;
+    font-family: 'Space Mono', monospace;
+}
+.secondary{
+    color: #4F4F4F;
+    font-family: 'Space Mono', monospace;
+    font-size: 30px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+.h1-up{
+    text-align: center;
+}
+
+section{
+    flex-grow: 1;
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 
+        repeat(
+            auto-fit,
+            minmax(345px,1fr)
+        );
+    gap: 30px;
+}
+
+.img{
+    width: 20%;
+    margin-left: 40%;
+}
