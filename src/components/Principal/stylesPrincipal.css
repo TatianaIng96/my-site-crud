@@ -1,0 +1,68 @@
+.navbar {
+    background: #1a2133;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 6.5rem;
+  }
+  
+  .navbar__logo {
+    display: flex;
+  }
+  
+  img {
+    height: 4rem;
+    width: 3rem;
+    margin-left: -45%;
+  }
+  
+  .navbar__logo--title {
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+  }
+  
+  .get-started {
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .navbar__btn--get-started:hover {
+    background: #4837ff;
+    transition: all 0.3s ease;
+  }
+  
+  .main-container {
+    padding: 2rem 5.5rem;
+  }
+  
+  .main-container__section1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .section1__btn {
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .section1__btn:hover {
+    background: #4837ff;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 600px) {
+    .navbar {
+      width: 37rem;
+      padding: 1rem 1rem;
+    }
+  
+    .main-container__section1 {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
